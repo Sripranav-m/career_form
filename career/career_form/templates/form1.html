@@ -1,0 +1,178 @@
+{% extends "formbody.html" %}
+{% block contents %}
+
+{% load static  %}
+
+<form action="" method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+	<div class="row">
+		<div class="container col-xl-6 col-lg-6 col-md-12 col-sm-12">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="headingtext" style="margin-left:5px;margin-top:10px;margin-bottom:10px;">PERSONAL-INFORMATION :</h3>
+					</div>
+					<div class="card-body">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">FIRST NAME *</span>
+							</div>
+							<input type="text"  id="firstname" name='firstname'  class="form-control" placeholder="FIRST NAME *" required>				
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">LAST NAME *</span>
+							</div>
+							<input type="text"  id="lastname" name='lastname'  class="form-control" placeholder="LAST NAME *" required>				
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">GENDER *</span>
+							</div>
+							<select class="form-control" name="gender" style="width:200px;" placeholder="GENDER *" required>
+                 				<option value="male" selected="selected">MALE</option>
+                 				<option value="female" >FEMALE</option>
+								<option value="other" >OTHER</option>
+              				</select>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">DATE OF BIRTH *</span>
+								</div>
+								<input type="date" name='dateofbirth' id="dateofbirth" class="form-control"  required>
+							</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">EDUCATION *</span>
+							</div>
+							<input type="text"  id="degree" name='degree'  class="form-control" placeholder="HIGHER EDUCATION *" style="margin-top:-37px;margin-left:199px;width:610px;" required>
+								<input type="text"  id="college" name='college'  class="form-control" placeholder="COLLEGE *" style="margin-left:199px;width:200px;margin-top:16px; display:inline;" required>
+								<input type="number" max="100" min="0.01" step="0.01" id="percentage" name='percentage'  class="form-control" placeholder="PERCENTAGE *" style="margin-left:10px;width:200px;margin-top:16px; display:inline;" required>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container  col-xl-6 col-lg-6 col-md-12 col-sm-12">
+				<div class="d-flex justify-content-center h-100">
+					<div class="card">
+						<div class="card-header">
+							<h3  class="headingtext" style="margin-left:5px;margin-top:10px;margin-bottom:10px;">CONTACT-INFORMATION :</h3>
+						</div>
+						<div class="card-body">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">EMAIL *</span>
+								</div>
+								<input type="email" name='email' id="email" class="form-control" placeholder="EMAIL ID *" required>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">PHONE NUMBER *</span>
+								</div>
+								<input type="tel" name='phonenumber' id="phonenumber" class="form-control" placeholder=" PHONE NUMBER *" required>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">CURRENT ADDRESS </span>
+								</div>
+								<input type="text"  id="addressline1" name='addressline1'  class="form-control" placeholder="ADDRESS LINE 1" >
+								<input type="text"  id="addressline2" name='addressline2'  class="form-control" placeholder="ADDRESS LINE 2" style="margin-top:16px;margin-left:199px;width:610px;">
+								<input type="text"  id="city" name='city'  class="form-control" placeholder="CITY" style="margin-left:199px;width:200px;margin-top:16px; display:inline;">
+								<input type="text"  id="state" name='state'  class="form-control" placeholder="STATE" style="margin-left:10px;width:200px;margin-top:16px; display:inline;">
+								<input type="text"  id="postalcode" name='postalcode'  class="form-control" placeholder="POSTAL/ZIP CODE" style="margin-left:199px;width:200px;margin-top:16px; display:inline;">
+								<input type="text"  id="country" name='country' class="form-control" placeholder="COUNTRY" style="margin-left:10px;width:200px;margin-top:16px; display:inline;">
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container  col-xl-6 col-lg-6 col-md-12 col-sm-12">
+				<div class="d-flex justify-content-center h-100">
+					<div class="card ">
+						<div class="card-header">
+							
+							<h3  class="headingtext" style="margin-left:5px;margin-top:10px;margin-bottom:10px;">EXPERIENCE AND OTHER DETAILS :</h3>
+						</div>
+						<div class="card-body">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">TOTAL EXPERIENCE</span>
+								</div>
+								<input type="number"  id="tey" name='tey' min="0" max="50" step="1"  class="form-control" placeholder="YEARS" style="width:50px;display:inline">
+								<input type="number"  id="tem" name='tem' min="0" max="12" step="1"  class="form-control" placeholder="MONTHS" style="margin-left:50px;width:50px;">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">REAL-TIME EXPERIENCE</span>
+								</div>
+								<input type="number"  id="rtey" name='rtey' min="0" max="50" step="1"  class="form-control" placeholder="YEARS" style="width:30px;display:inline">
+								<input type="number"  id="rtem" name='rtem' min="0" max="12" step="1"  class="form-control" placeholder="MONTHS" style="margin-left:50px;width:30px;">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">CURRENT-CTC</span>
+								</div>
+								<input type="number"  id="cctc" name='cctc' min="10000" max="10000000" step="1"  class="form-control" placeholder="INR PER ANNUM ( if currently working )" style="width:20px;display:inline">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">EXPECTED-CTC</span>
+								</div>
+								<input type="number"  id="ectc" name='ectc' min="10000" max="10000000" step="1"  class="form-control" placeholder="INR PER ANNUM" style="width:20px;display:inline">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">NOTICE PERIOD</span>
+								</div>
+								<input type="number"  id="noticeperiod" name='noticeperiod' min="0" max="12" step="1"  class="form-control" placeholder="NOTICE PERIOD IN MONTHS" style="width:20px;display:inline">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">REASON FOR SHIFT</span>
+								</div>
+								<input type="text"  id="reason" name='reason' class="form-control" placeholder="REASON FOR SHIFT" style="width:20px;display:inline">
+							</div>	
+						</div>
+						<div class="card-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container  col-xl-6 col-lg-6 col-md-12 col-sm-12">
+				<div class="d-flex justify-content-center h-100">
+					<div class="card ">
+						<div class="card-header">
+							
+							<h3  class="headingtext" style="margin-left:5px;margin-top:10px;margin-bottom:10px;">SKILLS AND RESUME :</h3>
+						</div>
+						<div class="card-body">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">SKILLS *</span>
+								</div>
+								<input type="text" name='skill1' id="skill1" class="form-control" placeholder="SKILL1 *" required>
+								<input type="text"  id="skill2" name='skill2'  class="form-control" placeholder="SKILL 2" style="margin-left:199px;width:760px;margin-top:16px;" >
+								<input type="text"  id="skill3" name='skill3'  class="form-control" placeholder="SKILL 3" style="margin-left:199px;width:760px;margin-top:16px;">
+								<input type="text"  id="otherskill" name='otherskill'  class="form-control" placeholder="OTHER SKILLS" style="margin-left:199px;width:760px;margin-top:16px;">
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">RESUME *</span>
+								</div>
+								<input type="file" name='resume' id="resume" class="form-control" placeholder="UPLOAD YOUR RESUME *" required>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="submit" value="SUBMIT" class="btn btn-lg btn-success" style="margin-left:41px;margin-top:15px;">
+	</div>
+</form>
+
+{% endblock %}
